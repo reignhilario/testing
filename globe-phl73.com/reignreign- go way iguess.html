@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BAGYONG EMONG 🫶</title>
+  <style>
+    body {
+      background: #000000;
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      opacity: 0;
+      animation: fadeIn 2s ease-in forwards;
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
+
+    h1 {
+      color: #ffffff;
+      margin-bottom: 20px;
+      font-size: 2rem;
+    }
+
+    .btn-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: center;
+    }
+
+    button {
+      padding: 12px 20px;
+      border: none;
+      background-color: #4fd87a;
+      color: #d5f8d4;
+      border-radius: 30px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #008834;
+      transform: scale(1.05);
+    }
+
+    .msg {
+      margin-top: 30px;
+      font-size: 1.2rem;
+      color: #ffffff;
+      min-height: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>OY SORY now lng </h1>
+
+  <div class="btn-container">
+    <button onclick="showMsg('malapit')">n</button>
+    <button onclick="showMsg('nako')">a</button>
+    <button onclick="showMsg('mabaliw')">t</button>
+    <button onclick="showMsg('gusto kona')">h</button>
+    <button onclick="showMsg('kumita ng ')">a</button>
+    <button onclick="showMsg('pera huhu')">n</button>
+    <button onclick="showMsg('meron kba alam oks lng ket illegal')">i</button>
+    <button onclick="showMsg('musta may baha ba jan binaha d2 haha first time sa labas')">e</button>
+    <button onclick="showMsg('iingat kau brbb REALQUICK ahanap lng ako pantustos')">l</button>
+  </div>
+
+  <div class="msg" id="msg"></div>
+
+  <audio id="music" src="sarapKo.mp3"></audio>
+
+  <script>
+    let hasStartedMusic = false;
+    const music = document.getElementById('music');
+
+    function showMsg(text) {
+      document.getElementById('msg').innerText = text;
+
+      if (!hasStartedMusic) {
+        music.play();
+        hasStartedMusic = true;
+      }
+    }
+
+    music.onerror = () => {
+      alert("couldn’t load music 😢 make sure 'song.mp3' is in the same folder.");
+    };
+  </script>
+</body>
+</html>
